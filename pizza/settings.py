@@ -106,10 +106,31 @@ WSGI_APPLICATION = 'pizza.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ffos',
+        'USER': 'admin',
+        'PASSWORD': 'varshith',
+        'HOST': 'database-1.cjcu0uec2cye.ap-south-1.rds.amazonaws.com',   # Or your MySQL server address
+        'PORT': '3306',        # MySQL default port
     }
 }
+
+ALLOWED_HOSTS = ['54.242.204.243' , 'fos.sdplms.xyz' , 'sdplms.xyz']  # Not recommended but useful in dev mode
+
+CORS_ALLOWED_ORIGINS = [
+    'https://fos.sdplms.xyz',
+    'https://sdplms.xyz',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://sdplms.xyz',
+    'https://fos.sdplms.xyz',
+]
+
+
+
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 
 
 # Password validation
